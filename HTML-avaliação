@@ -1,46 +1,188 @@
-// FUNÇÃO VERIFICAR (Para escrever na DIV e no Console)
-function verificar(nomeDoTeste, condicao) {
- var p = document.createElement("p");
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meu site</title>
+    <style>
+        
+        *{
+            
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
- if (condicao) {
-    p.innerHTML = "✅ " + nomeDoTeste;
-    p.style.color = "green";
-    console.log("✅ PASSOU: " + nomeDoTeste);
- } else {
-    p.innerHTML = "❌ " + nomeDoTeste;
-    p.style.color = "red";
-    console.error("❌ FALHOU: " + nomeDoTeste);
- }
+        .caixa {
+            width: 1240px;
+            margin: 0 auto;
+            
+        }
+        .camera{
+            height: 27.5px;
+            width: 30px;
+            
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            
+            
+            
+        }
+         .b{
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            
 
- document.getElementById("relatorio-testes").appendChild(p);
-}
-/* Instruções: Desenvolva a lógica de verificação dentro da função
-abaixo.
-O script deve ser vinculado ao HTML via <script
-src="testes.js"></script>
-*/
-window.onload = function() {
-console.log("--- INICIANDO PROTOCOLO DE TESTES ---");
-// Exemplo de Teste de SEO
-let tituloValido = document.title !== "" && document.title !== "Document";
-verificar("Título da aba está configurado", tituloValido);
+            
+        }
+        .pesquisa{
+            height: 45px;
+            background: grey;
+            opacity: 56%;
+            border-radius: 5;
+            padding: 0 10px;
+            width: 1000px;
+            align-items: center;
+            display: flex;
 
-// Desenvolva os demais testes abaixo:
-// 1. Teste de H1...
-let H1Valido = document.title !== "" && document.title !== "Document";
-verificar("H1 da aba está configurado", H1Valido);
+        }
+        .b2{
+            color: white;
+        }
+        .camera2{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .img{
+            width: 390px;
+            height: 194px;
+        }
+        .container2{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            row-gap: 15px;
+            justify-content: space-between;
+            
+        }
+        .t{
+            display: flex;
+            justify-content: center;
+        }
+        .t p {
+            
+            width: fit-content;
+            padding:  10px;
+        }
+        .background{
+            background-color: rgba(194, 188, 188, 0.726);
+            
+        }
 
-// 2. Teste de Imagens (Dica: use um loop for ou forEach)...
-const imagens = document.querySelectorAll('img')
-for(let i = 0; i < imagens.length; i++) {
-    verificar("Vericar imgs", imagens[i] !== null);
-}
+        .card {
+            background: white;
+            width: 400px
+        }
 
-// 3. Teste de Performance...
+        .card img {
+            width: 100%;
+        }
 
-verificar('tempo para carregar', performance.now() / 1000 < 2)
+        .card .tag {
+            
+            color: black;
+            padding: 5px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+        .titulo{
+            display: flex;
+            padding: 0 170px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container caixa">
+        <img class="camera" src="" alt="logo">
+        <ul class="b">
+            <li >home</li>
+            <li >galeria</li>
+        </ul>
+        <div class="pesquisa">
+            <p class="b2">Pesquise por imagens ou coleções</p>
+        </div>
+        <img class="camera2" src="" alt="logo">
+    </div>
+    <div class="background">
+        <h1 class="titulo">Galeria</h1>
+        <div class="container2 caixa">
+            
+            <div class="card">
+                <img class="img" src="" alt="">
+                <p>Workspace elétrica</p>
+                <p class="tag">tag</p>
+            </div>
+            <div class="card">
+                <img class="img" src="" alt="">
+                <p>Dark and red</p>
+                <p class="tag">tag</p>
+            </div>
+            <div class="card">
+                <img class="img" src="" alt="">
+                <p>Organização e grids</p>
+                <p class="tag">tag</p>
+            </div>
+            
+            <div class="card">
+                <img class="img" src="" alt="">
+                <p>Colméia</p>
+                <p class="tag">tag</p>
+            </div>
 
-console.log("--- FIM DO RELATÓRIO ---");
-};
+            <div class="card">
+                <img class="img" src="" alt="">
+                <p>Setup de escritor</p>
+                <p class="tag">tag</p>
+            </div>
 
+            <div class="card">
+                <img class="img" src="" alt="">
+                <p>Ergonomia e cores</p>
+                <p class="tag">tag</p>
+            </div>
+            
+            <div class="card">
+                <img class="img" src="" alt="">
+                <p>Show de luzes</p>
+                <p class="tag">tag</p>
+            </div>
 
+            <div class="card">
+                <img class="img" src="" alt="">
+                <p>Deep purple</p>
+                <p class="tag">tag</p>
+            </div>
+
+            <div class="card">
+                <img class="img" src="" alt="">
+                <p>Multi-Screen</p>
+                <p class="tag">tag</p>
+            </div>
+            
+        </div>
+         <br>
+    </div>
+    <div class="t">
+        <p>© 2025 - Web Gallery </p>
+    </div>
+
+    <div id="relatorio-testes"></div>
+</body>
+<script src="testfront-end.js"></script>
+</html
